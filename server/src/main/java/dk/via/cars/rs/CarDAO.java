@@ -1,4 +1,4 @@
-package dk.via.cars.ws;
+package dk.via.cars.rs;
 
 import dk.via.cars.CarDTO;
 import dk.via.cars.MoneyDTO;
