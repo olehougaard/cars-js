@@ -4,9 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <description>jax-ws implementation of the cars example</description>
+    <parent>
+        <artifactId>cars-rs</artifactId>
+        <groupId>dk.via.cars</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-    <groupId>dk.via.cars</groupId>
-    <artifactId>cars-ws-client</artifactId>
+    <artifactId>cars-rs-client</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -17,20 +21,22 @@
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.sun.xml.ws</groupId>
-            <artifactId>jaxws-ri</artifactId>
-            <version>2.3.2</version>
-            <type>pom</type>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-binding</artifactId>
         </dependency>
         <dependency>
-            <groupId>dk.via.cars</groupId>
-            <artifactId>cars-ws</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>2.28</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cars-rs-shared</artifactId>
+            <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
